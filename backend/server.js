@@ -1,0 +1,15 @@
+const express = require('express');
+const cors = require('cors');
+const app = express();
+require('dotenv').config();
+const dbConfig = require('./config/dbConfig');
+const port = process.env.PORT || 5000;
+app.use(express.json());
+app.use(cors());
+const usersRoute = require('./routes/usersRoute');
+const busesroute = require('./routes/busesroute');
+const bookingsroute = require('./routes/bookingroute');
+app.use('/users', usersRoute);
+app.use('/buses', busesroute);
+app.use('/bookings', bookingsroute);
+app.listen(port, () => console.log(`node server Listening on port ${port}`));
