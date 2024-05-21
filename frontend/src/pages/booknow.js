@@ -19,7 +19,7 @@ function Booknow() {
   const getbus = async () => {
     try {
       dispatch(Showloading());
-      const response = await axiosInstance.post('http://localhost:5000/buses/get-bus-by-id', {
+      const response = await axiosInstance.post('https://apnabus-mern.onrender.com/buses/get-bus-by-id', {
         _id: params.id,
       });
       dispatch(Hideloading());
@@ -36,7 +36,7 @@ function Booknow() {
   const booknow = async (transactionId) => {
     try {
       dispatch(Showloading());
-      const response = await axiosInstance.post('http://localhost:5000/bookings/book-seat', {
+      const response = await axiosInstance.post('https://apnabus-mern.onrender.com/bookings/book-seat', {
         bus: bus._id,
         seats: selectedseats,
         transactionId,
@@ -56,7 +56,7 @@ function Booknow() {
   const onToken = async (token) => {
     try {
       dispatch(Showloading());
-      const response = await axiosInstance.post('http://localhost:5000/bookings/make-payment', {
+      const response = await axiosInstance.post('https://apnabus-mern.onrender.com/bookings/make-payment', {
         token,
         amount: selectedseats.length * bus.fare * 100,
       });

@@ -12,7 +12,7 @@ function Register() {
   const onFinish = async (values) => {
     try {
       dispatch(Showloading());
-      const response = await axios.post("http://localhost:5000/users/register", values);
+      const response = await axios.post("https://apnabus-mern.onrender.com/users/register", values);
       dispatch(Hideloading());
       if (response.data.success) {
         message.success(response.data.message);

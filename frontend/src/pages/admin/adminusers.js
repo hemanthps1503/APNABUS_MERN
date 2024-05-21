@@ -15,7 +15,7 @@ function Adminusers() {
   const getusers = async () => {
     try {
       dispatch(Showloading());
-      const response = await axiosInstance.post('http://localhost:5000/users/get-all-users', {});
+      const response = await axiosInstance.post('https://apnabus-mern.onrender.com/users/get-all-users', {});
       dispatch(Hideloading());
       if (response.data.success) {
         setusers(response.data.data);
@@ -55,7 +55,7 @@ function Adminusers() {
 
       dispatch(Showloading());
       const response = await axiosInstance.post(
-        'http://localhost:5000/users/update-user-permissions',
+        'https://apnabus-mern.onrender.com/users/update-user-permissions',
         payload
       );
       dispatch(Hideloading());

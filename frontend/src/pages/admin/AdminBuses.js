@@ -16,7 +16,7 @@ function Adminbuses() {
   const getbuses = async () => {
     try {
       dispatch(Showloading());
-      const response = await axiosInstance.post('http://localhost:5000/buses/get-all-buses', {});
+      const response = await axiosInstance.post('https://apnabus-mern.onrender.com/buses/get-all-buses', {});
       dispatch(Hideloading());
       if (response.data.success) {
         setbuses(response.data.data);
@@ -32,7 +32,7 @@ function Adminbuses() {
   const deleteBus = async (id) => {
     try {
       dispatch(Showloading(id));
-      const response = await axiosInstance.post('http://localhost:5000/buses/delete-bus', {
+      const response = await axiosInstance.post('https://apnabus-mern.onrender.com/buses/delete-bus', {
         _id: id,
       });
       dispatch(Hideloading());

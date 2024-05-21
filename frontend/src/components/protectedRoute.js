@@ -16,7 +16,7 @@ function ProtectedRoute({ children }) {
     try {
       dispatch(Showloading());
       const response = await axios.post(
-        'http://localhost:5000/users/get-user-by-id',
+        'https://apnabus-mern.onrender.com/users/get-user-by-id',
         {},
         {
           headers: {

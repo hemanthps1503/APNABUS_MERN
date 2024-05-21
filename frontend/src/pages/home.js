@@ -14,7 +14,7 @@ function Home() {
     try {
       dispatch(Showloading());
       const response = await axios.post(
-        'http://localhost:5000/buses/get-all-buses',
+        'https://apnabus-mern.onrender.com/buses/get-all-buses',
         {},
         {
           headers: {

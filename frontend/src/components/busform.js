@@ -18,9 +18,9 @@ function Busform({
       dispatch(Showloading());
       let response = null;
       if (type === 'add') {
-        response = await axiosInstance.post('http://localhost:5000/buses/add-bus', values);
+        response = await axiosInstance.post('https://apnabus-mern.onrender.com/buses/add-bus', values);
       } else {
-        response = await axiosInstance.post('http://localhost:5000/buses/update-bus', {
+        response = await axiosInstance.post('https://apnabus-mern.onrender.com/buses/update-bus', {
           ...values,
           _id: selectedbus._id,
         });

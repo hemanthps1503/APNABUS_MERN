@@ -18,7 +18,7 @@ function Booking() {
     try {
       dispatch(Showloading());
       const response = await axiosInstance.post(
-        'http://localhost:5000/bookings/get-bookings-by-user-id',
+        'https://apnabus-mern.onrender.com/bookings/get-bookings-by-user-id',
         {}
       );
       dispatch(Hideloading());
